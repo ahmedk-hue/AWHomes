@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Zap } from 'lucide-react';
+import { Menu, X, Phone, Zap, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/Button';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,8 +17,26 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '/services/remodeling' },
-    { name: 'Locations', href: '/locations/newton' },
+    {
+      name: 'Services',
+      href: '/services',
+      subLinks: [
+        { name: 'Home Remodeling', href: '/services/remodeling' },
+        { name: 'HVAC Solutions', href: '/services/hvac' },
+        { name: 'Plumbing', href: '/services/plumbing' },
+        { name: 'Electrical', href: '/services/electrical' },
+        { name: 'Energy Assessment', href: '/services/energy' },
+        { name: 'Maintenance', href: '/services/maintenance' },
+      ]
+    },
+    {
+      name: 'Locations',
+      href: '/locations',
+      subLinks: [
+        { name: 'Newton, MA', href: '/locations/newton' },
+        { name: 'View All Areas', href: '/locations' },
+      ]
+    },
     { name: 'Process', href: '/#process' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
@@ -53,13 +72,30 @@ export const Navbar: React.FC = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="text-sm font-semibold text-brand-gray hover:text-brand-gold transition-colors uppercase tracking-wide"
-              >
-                {link.name}
-              </Link>
+              <div key={link.name} className="relative group">
+                <Link
+                  to={link.href}
+                  className="flex items-center gap-1 text-sm font-semibold text-brand-gray hover:text-brand-gold transition-colors uppercase tracking-wide py-2"
+                >
+                  {link.name}
+                  {link.subLinks && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />}
+                </Link>
+
+                {/* Desktop Dropdown */}
+                {link.subLinks && (
+                  <div className="absolute top-full left-0 w-56 bg-white shadow-xl rounded-sm py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 border-t-4 border-brand-gold">
+                    {link.subLinks.map((subLink) => (
+                      <Link
+                        key={subLink.name}
+                        to={subLink.href}
+                        className="block px-6 py-2 text-sm text-brand-navy hover:bg-brand-light hover:text-brand-gold transition-colors font-medium"
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -92,18 +128,45 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl px-4 py-6 flex flex-col space-y-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl px-4 py-6 flex flex-col space-y-4 max-h-[80vh] overflow-y-auto">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className="text-lg font-bold text-brand-navy hover:text-brand-gold block border-b border-gray-100 pb-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
+            <div key={link.name} className="border-b border-gray-100 pb-2">
+              <div className="flex items-center justify-between">
+                <Link
+                  to={link.href}
+                  className="text-lg font-bold text-brand-navy hover:text-brand-gold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+                {link.subLinks && (
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
+                    className="p-2 text-brand-gray"
+                  >
+                    <ChevronDown size={20} className={`transform transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
+                  </button>
+                )}
+              </div>
+
+              {/* Mobile Submenu */}
+              {link.subLinks && activeDropdown === link.name && (
+                <div className="mt-2 pl-4 space-y-2 border-l-2 border-brand-light ml-2">
+                  {link.subLinks.map((subLink) => (
+                    <Link
+                      key={subLink.name}
+                      to={subLink.href}
+                      className="block text-brand-gray hover:text-brand-gold text-sm py-1 font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {subLink.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
-          <a href="tel:6175550123" className="flex items-center gap-2 font-bold text-brand-navy py-2">
+          <a href="tel:6175550123" className="flex items-center gap-2 font-bold text-brand-navy py-2 pt-4">
             <IconPhone size={18} className="text-brand-gold" />
             (617) 555-0123
           </a>

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
+import { Services } from './pages/Services';
+import { Locations } from './pages/Locations';
 import { HomeRemodeling } from './pages/services/HomeRemodeling';
 import { HVAC } from './pages/services/HVAC';
 import { Plumbing } from './pages/services/Plumbing';
@@ -23,6 +25,8 @@ const App: React.FC = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/locations" element={<Locations />} />
             <Route path="/services/remodeling" element={<HomeRemodeling />} />
             <Route path="/services/hvac" element={<HVAC />} />
             <Route path="/services/plumbing" element={<Plumbing />} />
