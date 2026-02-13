@@ -6,7 +6,7 @@ export const Contact: React.FC = () => {
     return (
         <div className="bg-white">
             {/* HEADER */}
-            <section className="py-20 bg-brand-navy text-white text-center">
+            <section className="pt-32 pb-20 bg-brand-navy text-white text-center">
                 <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Start Your Project</h1>
                 <p className="text-xl text-gray-300">Tell us about your home. We reply within 24 hours.</p>
             </section>

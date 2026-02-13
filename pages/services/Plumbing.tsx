@@ -8,7 +8,7 @@ export const Plumbing: React.FC = () => {
     return (
         <div className="bg-white">
             {/* 1. THE PROMISE (HERO) */}
-            <section className="relative min-h-[80vh] flex flex-col justify-center items-center pt-20">
+            <section className="relative min-h-[80vh] flex flex-col justify-center items-center pt-32">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop"

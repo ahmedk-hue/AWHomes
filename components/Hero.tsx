@@ -4,13 +4,13 @@ import { Button } from './ui/Button';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-20">
-      
+    <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32">
+
       {/* Background Image with heavy overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2531&auto=format&fit=crop" 
-          alt="Modern Home Construction" 
+        <img
+          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2531&auto=format&fit=crop"
+          alt="Modern Home Construction"
           className="w-full h-full object-cover"
         />
         {/* Navy Overlay */}
@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 w-full grid md:grid-cols-2 gap-12 items-center">
-        
+
         <div className="text-left">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-brand-gold/10 border-l-4 border-brand-gold backdrop-blur-md mb-8">
@@ -84,7 +84,7 @@ export const Hero: React.FC = () => {
         <div className="hidden md:block bg-white p-8 rounded-sm shadow-2xl border-t-8 border-brand-gold max-w-md ml-auto">
           <h3 className="text-2xl font-serif font-bold text-brand-navy mb-2">Request Service</h3>
           <p className="text-gray-600 mb-6">Fill out the form below for a free estimate on your next project.</p>
-          
+
           <div className="space-y-4">
             <input type="text" placeholder="Full Name" className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none bg-gray-50" />
             <input type="email" placeholder="Email Address" className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none bg-gray-50" />

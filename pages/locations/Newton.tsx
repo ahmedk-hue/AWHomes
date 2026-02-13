@@ -8,7 +8,7 @@ export const NewtonLocation: React.FC = () => {
     return (
         <div className="bg-white">
             {/* 1. HERO SECTION (SOP-02: Section 1) */}
-            <section className="relative min-h-[70vh] flex flex-col justify-center items-center pt-20">
+            <section className="relative min-h-[70vh] flex flex-col justify-center items-center pt-32">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1549643276-fbc2cbd0289c?q=80&w=2070&auto=format&fit=crop"

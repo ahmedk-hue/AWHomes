@@ -6,7 +6,7 @@ export const About: React.FC = () => {
     return (
         <div className="bg-white">
             {/* 1. HERO SECTION */}
-            <section className="relative py-24 bg-brand-navy text-white overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-brand-navy text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <img
                         src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"

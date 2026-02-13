@@ -8,7 +8,7 @@ export const HVAC: React.FC = () => {
     return (
         <div className="bg-white">
             {/* 1. THE PROMISE (HERO) */}
-            <section className="relative min-h-[80vh] flex flex-col justify-center items-center pt-20">
+            <section className="relative min-h-[80vh] flex flex-col justify-center items-center pt-32">
                 <div className="absolute inset-0 z-0">
                     {/* HVAC/Mechanical background */}
                     <img
