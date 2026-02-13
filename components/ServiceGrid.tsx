@@ -15,35 +15,35 @@ const services: ServiceItem[] = [
     title: 'HVAC Solutions',
     description: 'High-efficiency heating and cooling systems installed by certified technicians.',
     icon: ThermometerSun,
-    link: '#',
+    link: '/services/hvac',
   },
   {
     id: 'plumbing',
     title: 'Precision Plumbing',
     description: 'From leak detection to complete repiping. Reliable solutions for your water systems.',
     icon: Droplets,
-    link: '#',
+    link: '/services/plumbing',
   },
   {
     id: 'electrical',
     title: 'Electrical & Smart Home',
     description: 'Panel upgrades, lighting design, and modern smart home integration.',
     icon: Zap,
-    link: '#',
+    link: '/services/electrical',
   },
   {
     id: 'energy',
     title: 'Energy Assessment',
     description: 'Mass Save® certified assessments to reduce your carbon footprint and bills.',
     icon: Wrench,
-    link: '#',
+    link: '/services/energy',
   },
   {
     id: 'maintenance',
     title: 'Property Maintenance',
     description: 'Scheduled upkeep to ensure your home systems run smoothly year-round.',
     icon: Wrench, // Reusing wrench for now
-    link: '#',
+    link: '/services/maintenance',
   },
 ];
 
