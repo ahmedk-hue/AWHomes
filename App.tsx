@@ -1,29 +1,26 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { ServiceGrid } from './components/ServiceGrid';
-import { Process } from './components/Process';
-import { Portfolio } from './components/Portfolio';
-import { Testimonials } from './components/Testimonials';
-import { FAQ } from './components/FAQ';
-import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { Home } from './pages/Home';
+import { HomeRemodeling } from './pages/services/HomeRemodeling';
+import { ScrollToTop } from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans">
-      <Navbar />
-      <main>
-        <Hero />
-        <ServiceGrid />
-        <Process />
-        <Portfolio />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white text-slate-800 font-sans">
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services/remodeling" element={<HomeRemodeling />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
