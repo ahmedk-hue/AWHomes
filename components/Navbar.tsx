@@ -16,18 +16,18 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '/services/remodeling' }, // Temporarily linking to the one service page we have
+    { name: 'Services', href: '/services/remodeling' },
+    { name: 'Locations', href: '/locations/newton' },
     { name: 'Process', href: '/#process' },
-    { name: 'Portfolio', href: '/#portfolio' },
-    { name: 'Reviews', href: '/#reviews' },
-    { name: 'FAQ', href: '/#faq' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white shadow-md py-2'
-          : 'bg-white/95 backdrop-blur-sm shadow-sm py-4'
+        ? 'bg-white shadow-md py-2'
+        : 'bg-white/95 backdrop-blur-sm shadow-sm py-4'
         }`}
     >
       {/* Top Bar - Hidden on mobile, visible on desktop */}
@@ -53,13 +53,13 @@ export const Navbar: React.FC = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-semibold text-brand-gray hover:text-brand-gold transition-colors uppercase tracking-wide"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -71,9 +71,11 @@ export const Navbar: React.FC = () => {
               </div>
               <span>(617) 555-0123</span>
             </a>
-            <Button size="sm" variant="primary">
-              Get Quote
-            </Button>
+            <Link to="/contact">
+              <Button size="sm" variant="primary">
+                Get Quote
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -92,14 +94,14 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl px-4 py-6 flex flex-col space-y-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="text-lg font-bold text-brand-navy hover:text-brand-gold block border-b border-gray-100 pb-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <a href="tel:6175550123" className="flex items-center gap-2 font-bold text-brand-navy py-2">
             <IconPhone size={18} className="text-brand-gold" />

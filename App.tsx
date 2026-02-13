@@ -9,6 +9,9 @@ import { Plumbing } from './pages/services/Plumbing';
 import { Electrical } from './pages/services/Electrical';
 import { EnergyAssessment } from './pages/services/EnergyAssessment';
 import { Maintenance } from './pages/services/Maintenance';
+import { About } from './pages/About';
+import { NewtonLocation } from './pages/locations/Newton';
+import { Contact } from './pages/Contact';
 import { ScrollToTop } from './components/ScrollToTop';
 
 const App: React.FC = () => {
@@ -26,6 +29,9 @@ const App: React.FC = () => {
             <Route path="/services/electrical" element={<Electrical />} />
             <Route path="/services/energy" element={<EnergyAssessment />} />
             <Route path="/services/maintenance" element={<Maintenance />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/locations/newton" element={<NewtonLocation />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
