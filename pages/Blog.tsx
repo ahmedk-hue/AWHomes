@@ -1,171 +1,121 @@
 import React from 'react';
-import { BookOpen, ArrowRight, Clock, User } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { Calendar, User, ArrowRight, Search, Tag, BookOpen, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 
-const blogPosts = [
-    {
-        slug: 'mass-save-rebates-guide-2025',
-        title: 'The Complete Guide to Mass Save® Rebates in 2025',
-        excerpt: 'Massachusetts homeowners can access up to $16,000 in rebates for heat pumps, insulation, and more. Here\'s exactly how to maximize your Mass Save® incentives this year.',
-        category: 'Energy Savings',
-        readTime: '8 min read',
-        date: 'February 18, 2025',
-        author: 'Albert Puma',
-        image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=800&auto=format&fit=crop',
-    },
-    {
-        slug: 'heat-pump-winter-performance-massachusetts',
-        title: 'Do Heat Pumps Work in Massachusetts Winters?',
-        excerpt: 'The #1 concern we hear from homeowners. The short answer: yes — but only if you install the right type. Here\'s what you need to know about cold-climate heat pumps in New England.',
-        category: 'Heat Pumps',
-        readTime: '6 min read',
-        date: 'February 10, 2025',
-        author: 'Albert Puma',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
-    },
-    {
-        slug: 'furnace-replacement-signs-massachusetts',
-        title: '7 Signs It\'s Time to Replace Your Furnace (Massachusetts Edition)',
-        excerpt: 'Your furnace is working overtime to keep up with New England winters. Learn the warning signs that indicate repair is no longer the right call — and what to do next.',
-        category: 'Furnace',
-        readTime: '5 min read',
-        date: 'January 28, 2025',
-        author: 'Albert Puma',
-        image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop',
-    },
-    {
-        slug: 'mini-split-vs-central-ac-boston',
-        title: 'Mini Split vs. Central AC: Which Is Right for Your Boston Home?',
-        excerpt: 'Many Greater Boston homes were built before central air was standard. We break down the pros, cons, and costs of ductless mini splits vs. central AC for Massachusetts homeowners.',
-        category: 'Cooling',
-        readTime: '7 min read',
-        date: 'January 15, 2025',
-        author: 'Albert Puma',
-        image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=800&auto=format&fit=crop',
-    },
-    {
-        slug: 'boiler-maintenance-checklist',
-        title: 'Annual Boiler Maintenance Checklist for Massachusetts Homeowners',
-        excerpt: 'A well-maintained boiler runs efficiently and lasts longer. Here\'s the 12-point annual maintenance checklist our technicians follow — and what you can do between visits.',
-        category: 'Boiler',
-        readTime: '5 min read',
-        date: 'January 5, 2025',
-        author: 'Albert Puma',
-        image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop',
-    },
-    {
-        slug: 'tankless-water-heater-pros-cons',
-        title: 'Tankless Water Heaters: Worth It for Massachusetts Homes?',
-        excerpt: 'Tankless water heaters promise endless hot water and lower bills. But do they live up to the hype in New England? We break down the real numbers.',
-        category: 'Water Heater',
-        readTime: '6 min read',
-        date: 'December 20, 2024',
-        author: 'Albert Puma',
-        image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=800&auto=format&fit=crop',
-    },
-];
-
-const categoryColors: Record<string, string> = {
-    'Energy Savings': 'bg-green-100 text-green-800',
-    'Heat Pumps': 'bg-blue-100 text-blue-800',
-    'Furnace': 'bg-orange-100 text-orange-800',
-    'Cooling': 'bg-sky-100 text-sky-800',
-    'Boiler': 'bg-red-100 text-red-800',
-    'Water Heater': 'bg-teal-100 text-teal-800',
-};
-
 export const Blog: React.FC = () => {
+    const posts = [
+        {
+            title: "Maximizing Mass Save Rebates: The 2025 Guide",
+            excerpt: "Learn how to qualify for up to $16,000 in heat pump rebates through the Mass Save program.",
+            author: "Maintenance Team",
+            date: "Feb 12, 2025",
+            readTime: "6 min read",
+            image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?q=80&w=2070&auto=format&fit=crop",
+            category: "Energy Efficiency"
+        },
+        {
+            title: "Remodeling Newton: Historic Requirements Explained",
+            excerpt: "Navigating the Newton Historic Commission doesn't have to be a nightmare. Here is our expert advice.",
+            author: "Design Lead",
+            date: "Feb 8, 2025",
+            readTime: "8 min read",
+            image: "https://images.unsplash.com/photo-1549643276-fbc2cbd0289c?q=80&w=2070&auto=format&fit=crop",
+            category: "Newton Projects"
+        },
+        {
+            title: "Heat Pumps vs. Furnaces: Which is Best for MA Winters?",
+            excerpt: "A technical breakdown of efficiency, installation costs, and comfort for homeowners in the Greater Boston area.",
+            author: "HVAC Specialist",
+            date: "Feb 1, 2025",
+            readTime: "10 min read",
+            image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop",
+            category: "HVAC Tech"
+        }
+    ];
+
     return (
-        <div className="bg-white">
+        <div className="pt-20">
+            <SEO
+                title="Home Improvement Blog | Tips & Advice | A.W. Puma"
+                description="Stay informed with the latest tips on home maintenance, energy efficiency, and remodeling trends from the A.W. Puma experts."
+                keywords="home improvement blog, hvac tips, remodeling advice, energy efficiency massachusetts"
+                canonical="/blog"
+            />
             {/* HERO */}
-            <section className="pt-32 pb-20 bg-brand-navy text-white text-center">
-                <div className="max-w-4xl mx-auto px-4">
-                    <span className="inline-block text-sm font-bold text-brand-gold uppercase tracking-widest mb-4">A.W. Puma Home Services</span>
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">HVAC Tips & Energy Savings for Massachusetts Homeowners</h1>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">Expert advice on heating, cooling, Mass Save® rebates, and keeping your home comfortable year-round.</p>
+            <section className="bg-brand-navy text-white py-20">
+                <div className="max-w-4xl mx-auto px-4 text-center">
+                    <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">The Puma Registry</h1>
+                    <p className="text-xl text-gray-300">Expertise on demand. Insights for the informed homeowner.</p>
                 </div>
             </section>
 
-            {/* BLOG GRID */}
-            <section className="py-24">
+            <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
-                    {/* Featured Post */}
-                    <div className="mb-16">
-                        <div className="grid md:grid-cols-2 gap-0 rounded-sm overflow-hidden shadow-lg border border-gray-100">
-                            <div className="aspect-[4/3] md:aspect-auto overflow-hidden">
-                                <img
-                                    src={blogPosts[0].image}
-                                    alt={blogPosts[0].title}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                            <div className="bg-brand-navy text-white p-10 flex flex-col justify-center">
-                                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 self-start ${categoryColors[blogPosts[0].category] || 'bg-brand-gold/20 text-brand-gold'}`}>
-                                    {blogPosts[0].category}
-                                </span>
-                                <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4 leading-snug">{blogPosts[0].title}</h2>
-                                <p className="text-gray-300 mb-6 leading-relaxed">{blogPosts[0].excerpt}</p>
-                                <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">
-                                    <span className="flex items-center gap-1"><User size={14} /> {blogPosts[0].author}</span>
-                                    <span className="flex items-center gap-1"><Clock size={14} /> {blogPosts[0].readTime}</span>
-                                    <span>{blogPosts[0].date}</span>
-                                </div>
-                                <Link to={`/blog/${blogPosts[0].slug}`}>
-                                    <Button variant="primary" className="self-start flex items-center gap-2">
-                                        Read Article <ArrowRight size={16} />
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Post Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.slice(1).map((post) => (
-                            <article key={post.slug} className="group bg-white rounded-sm overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                <div className="aspect-[16/9] overflow-hidden">
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                </div>
-                                <div className="p-6">
-                                    <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 ${categoryColors[post.category] || 'bg-gray-100 text-gray-600'}`}>
-                                        {post.category}
-                                    </span>
-                                    <h2 className="text-lg font-bold text-brand-navy mb-3 leading-snug group-hover:text-brand-gold transition-colors">
+                    <div className="flex flex-col lg:flex-row gap-16">
+                        {/* MAIN FEED */}
+                        <div className="lg:w-2/3 space-y-16">
+                            {posts.map((post, index) => (
+                                <article key={index} className="group cursor-pointer">
+                                    <div className="relative h-96 overflow-hidden rounded-sm mb-8">
+                                        <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                        <div className="absolute top-4 left-4 bg-brand-gold text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">
+                                            {post.category}
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-6 text-sm text-brand-gray mb-4">
+                                        <div className="flex items-center gap-2">
+                                            <Calendar size={16} className="text-brand-gold" />
+                                            {post.date}
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <Clock size={16} className="text-brand-gold" />
+                                            {post.readTime}
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <User size={16} className="text-brand-gold" />
+                                            By {post.author}
+                                        </div>
+                                    </div>
+                                    <h2 className="text-3xl font-serif font-bold text-brand-navy mb-4 group-hover:text-brand-gold transition-colors leading-tight">
                                         {post.title}
                                     </h2>
-                                    <p className="text-brand-gray text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-                                    <div className="flex items-center gap-3 text-xs text-gray-400 mb-4">
-                                        <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
-                                        <span>{post.date}</span>
+                                    <p className="text-lg text-brand-gray mb-6 leading-relaxed">
+                                        {post.excerpt}
+                                    </p>
+                                    <div className="flex items-center gap-2 text-brand-navy font-bold group-hover:translate-x-2 transition-transform">
+                                        Read Full Article <ArrowRight size={18} className="text-brand-gold" />
                                     </div>
-                                    <Link to={`/blog/${post.slug}`} className="flex items-center gap-1 text-sm font-semibold text-brand-gold hover:gap-2 transition-all">
-                                        Read More <ArrowRight size={14} />
-                                    </Link>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                                </article>
+                            ))}
+                        </div>
 
-            {/* CTA */}
-            <section className="py-20 bg-brand-light text-center">
-                <div className="max-w-2xl mx-auto px-4">
-                    <BookOpen className="w-12 h-12 text-brand-gold mx-auto mb-4" />
-                    <h2 className="text-2xl font-serif font-bold text-brand-navy mb-3">Have an HVAC Question?</h2>
-                    <p className="text-brand-gray mb-6">Our team is happy to answer questions about Mass Save® rebates, system sizing, or any heating and cooling concern.</p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="tel:+16176183366">
-                            <Button variant="primary" className="flex items-center gap-2">Call (617) 618-3366</Button>
-                        </a>
-                        <Link to="/contact">
-                            <Button variant="outline" className="flex items-center gap-2">Send a Message <ArrowRight size={16} /></Button>
-                        </Link>
+                        {/* SIDEBAR */}
+                        <aside className="lg:w-1/3">
+                            <div className="bg-brand-light p-8 rounded-sm sticky top-32">
+                                <h3 className="text-xl font-serif font-bold text-brand-navy mb-6">Stay Informed</h3>
+                                <p className="text-brand-gray mb-8 text-sm leading-relaxed">
+                                    Get our monthly dispatch on energy rebates, local construction codes, and home maintenance checklists.
+                                </p>
+                                <form className="space-y-4">
+                                    <input type="email" placeholder="Email address" className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-brand-gold outline-none transition-colors" />
+                                    <Button className="w-full">Join the Registry</Button>
+                                </form>
+                                <div className="mt-12 pt-12 border-t border-gray-200">
+                                    <h4 className="font-bold text-brand-navy uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
+                                        <BookOpen size={16} className="text-brand-gold" /> Popular Topics
+                                    </h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Mass Save', 'Heat Pumps', 'Newton Code', 'Mini Splits', 'Interior Design', 'Permitting'].map((tag) => (
+                                            <span key={tag} className="px-3 py-1 bg-white border border-gray-200 text-xs font-bold text-brand-gray hover:border-brand-gold hover:text-brand-navy cursor-pointer transition-colors">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </section>

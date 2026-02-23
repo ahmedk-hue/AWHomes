@@ -2,10 +2,17 @@ import React from 'react';
 import { Flame, Shield, Clock, CheckCircle, Star, Phone, ArrowRight, ThumbsUp, Award, AlertTriangle } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/SEO';
 
 export const Furnace: React.FC = () => {
     return (
         <div className="bg-white">
+            <SEO
+                title="Furnace Installation & Repair | Boston & Metro West | A.W. Puma"
+                description="Professional furnace installation and repair in Greater Boston. Mass Save® certified experts. Same-day emergency service."
+                keywords="furnace repair boston, furnace installation MA, heating contractor, mass save furnace rebates"
+                canonical="/services/furnace"
+            />
 
             {/* 1. HERO */}
             <section className="relative min-h-[92vh] flex items-center justify-center bg-brand-navy text-white overflow-hidden pt-20">

@@ -2,10 +2,17 @@ import React from 'react';
 import { Thermometer, Shield, CheckCircle, Star, Phone, ArrowRight, ThumbsUp, Award, AlertTriangle } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/SEO';
 
 export const HeatPump: React.FC = () => {
     return (
         <div className="bg-white">
+            <SEO
+                title="Heat Pump Installation & Mass Save® Rebates | A.W. Puma"
+                description="Transition to energy-efficient heating and cooling with cold-climate heat pumps. Up to $16,000 in Mass Save® rebates."
+                keywords="heat pump installation boston, air source heat pump MA, mass save heat pump rebates, energy efficient hvac"
+                canonical="/services/heat-pump"
+            />
 
             {/* 1. HERO */}
             <section className="relative min-h-[92vh] flex items-center justify-center bg-brand-navy text-white overflow-hidden pt-20">

@@ -2,10 +2,17 @@ import React from 'react';
 import { Wind, Shield, CheckCircle, Star, Phone, ArrowRight, ThumbsUp, Award, AlertTriangle } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/SEO';
 
 export const MiniSplits: React.FC = () => {
     return (
         <div className="bg-white">
+            <SEO
+                title="Ductless Mini Split Installation | Massachusetts | A.W. Puma"
+                description="Energy-efficient ductless mini split systems. Up to $10,000 in Mass Save® rebates. Expert installation in Greater Boston."
+                keywords="ductless mini splits boston, mini split installation MA, heat pump rebates, ductless ac massachusetts"
+                canonical="/services/mini-splits"
+            />
 
             {/* 1. HERO */}
             <section className="relative min-h-[92vh] flex items-center justify-center bg-brand-navy text-white overflow-hidden pt-20">

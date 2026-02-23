@@ -10,6 +10,7 @@ export const HomeRemodeling: React.FC = () => {
             <SEO
                 title="Custom Home Renovations in Boston & Metro West | A.W. Puma Home Services"
                 description="Elevating Massachusetts homes with expert craftsmanship and transparent project management. From custom carpentry to full-scale remodeling, we build the space you’ve been waiting for."
+                keywords="home remodeling boston, custom home builder MA, renovation contractor, home additions massachusetts, kitchen remodeling, bathroom remodeling"
                 canonical="/services/custom-remodeling"
                 schema={{
                     "@context": "https://schema.org",

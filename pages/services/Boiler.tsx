@@ -2,10 +2,17 @@ import React from 'react';
 import { Flame, Shield, CheckCircle, Star, Phone, ArrowRight, ThumbsUp, Award, AlertTriangle } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/SEO';
 
 export const Boiler: React.FC = () => {
     return (
         <div className="bg-white">
+            <SEO
+                title="Boiler Installation & Repair | Massachusetts | A.W. Puma"
+                description="High-efficiency boiler installation and replacement. Gas and oil boiler experts serving Greater Boston. Fully licensed."
+                keywords="boiler repair boston, boiler replacement MA, gas boiler installation, heating technician"
+                canonical="/services/boiler"
+            />
 
             {/* 1. HERO */}
             <section className="relative min-h-[92vh] flex items-center justify-center bg-brand-navy text-white overflow-hidden pt-20">

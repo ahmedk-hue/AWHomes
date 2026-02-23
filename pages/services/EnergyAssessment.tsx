@@ -2,10 +2,17 @@ import React from 'react';
 import { Leaf, DollarSign, CheckCircle, Star, Phone, ArrowRight, Shield, Award, AlertTriangle, ExternalLink } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/SEO';
 
 export const EnergyAssessment: React.FC = () => {
     return (
         <div className="bg-white">
+            <SEO
+                title="Mass Save® Home Energy Assessment | Massachusetts | A.W. Puma"
+                description="Start your energy efficiency journey with a Mass Save® home energy assessment. Access up to $16,000 in rebates and $0% financing."
+                keywords="mass save energy assessment, home energy audit MA, insulation rebates, heat pump incentives"
+                canonical="/services/energy-assessment"
+            />
 
             {/* 1. HERO */}
             <section className="relative min-h-[92vh] flex items-center justify-center bg-brand-navy text-white overflow-hidden pt-20">

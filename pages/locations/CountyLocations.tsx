@@ -2,16 +2,27 @@ import React from 'react';
 import { Flame, CheckCircle, Phone, ArrowRight, MapPin } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/SEO';
 
 interface CountyPageProps {
     county: string;
     cities: string[];
     description: string;
     image: string;
+    seoTitle: string;
+    seoDescription: string;
+    seoKeywords: string;
+    slug: string;
 }
 
-const CountyPage: React.FC<CountyPageProps> = ({ county, cities, description, image }) => (
+const CountyPage: React.FC<CountyPageProps> = ({ county, cities, description, image, seoTitle, seoDescription, seoKeywords, slug }) => (
     <div className="bg-white">
+        <SEO
+            title={seoTitle}
+            description={seoDescription}
+            keywords={seoKeywords}
+            canonical={`/locations/${slug}`}
+        />
         <section className="relative pt-32 pb-20 bg-brand-navy text-white overflow-hidden">
             <div className="absolute inset-0 opacity-15">
                 <img src={image} alt={county} className="w-full h-full object-cover" />
@@ -97,42 +108,70 @@ const countyData: Record<string, CountyPageProps> = {
         cities: ['Newton', 'Cambridge', 'Lowell', 'Somerville', 'Medford', 'Waltham', 'Watertown'],
         description: 'A.W. Puma provides expert heating, cooling, and energy services to homeowners across Middlesex County — including Newton, Cambridge, and Lowell.',
         image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=2070&auto=format&fit=crop',
+        seoTitle: 'HVAC Services in Middlesex County, MA | A.W. Puma',
+        seoDescription: 'Expert furnace, AC, and boiler services across Middlesex County. Serving Newton, Cambridge, Lowell, and more. Mass Save® certified.',
+        seoKeywords: 'hvac middlesex county, furnace repair newton, ac installation cambridge, mass save rebates middlesex',
+        slug: 'middlesex-county'
     },
     'norfolk-county': {
         county: 'Norfolk County, MA',
         cities: ['Dover', 'Wellesley', 'Needham', 'Winchester', 'Brookline', 'Milton', 'Dedham'],
         description: 'Trusted HVAC services for Norfolk County homeowners — from Wellesley and Needham to Dover and Winchester. Mass Save® certified, fully permitted.',
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop',
+        seoTitle: 'HVAC Services in Norfolk County, MA | A.W. Puma',
+        seoDescription: 'Professional heating and cooling services in Norfolk County. Serving Wellesley, Needham, Dover, and Brookline. Same-day service available.',
+        seoKeywords: 'hvac norfolk county, boiler repair wellesley, ac installation needham, furnace service brookline',
+        slug: 'norfolk-county'
     },
     'suffolk-county': {
         county: 'Suffolk County, MA',
         cities: ['Boston', 'Revere', 'Chelsea', 'Winthrop'],
         description: 'A.W. Puma serves Boston and Suffolk County homeowners with licensed HVAC installation, repair, and Mass Save® energy services.',
         image: 'https://images.unsplash.com/photo-1501979376754-1ff28c3b0e7c?q=80&w=2070&auto=format&fit=crop',
+        seoTitle: 'HVAC Services in Suffolk County & Boston | A.W. Puma',
+        seoDescription: 'Licensed HVAC installation and repair in Boston and Suffolk County. Mini splits, heat pumps, and furnaces. Mass Save® partner.',
+        seoKeywords: 'hvac boston, ac repair suffolk county, heat pump installation boston, furnace replacement massachusetts',
+        slug: 'suffolk-county'
     },
     'essex-county': {
         county: 'Essex County, MA',
         cities: ['Lawrence', 'Lynn', 'Peabody', 'Salem', 'Haverhill', 'Beverly'],
         description: 'Heating, cooling, and energy efficiency services for Essex County homes — from Lawrence to Salem and beyond.',
         image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop',
+        seoTitle: 'HVAC Services in Essex County, MA | A.W. Puma',
+        seoDescription: 'Expert HVAC services for Essex County homeowners. Serving Lawrence, Lynn, Peabody, and Salem. High-efficiency systems.',
+        seoKeywords: 'hvac essex county, furnace repair salem, ac installation lynn, boiler service peabody',
+        slug: 'essex-county'
     },
     'plymouth-county': {
         county: 'Plymouth County, MA',
         cities: ['Brockton', 'Plymouth', 'Weymouth', 'Quincy', 'Marshfield'],
         description: 'A.W. Puma brings professional HVAC and Mass Save® energy services to Plymouth County homeowners — including Brockton, Plymouth, and Quincy.',
         image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?q=80&w=2070&auto=format&fit=crop',
+        seoTitle: 'HVAC Services in Plymouth County, MA | A.W. Puma',
+        seoDescription: 'Professional HVAC and energy services in Plymouth County. Serving Brockton, Plymouth, Weymouth, and Quincy.',
+        seoKeywords: 'hvac plymouth county, ac repair quincy, furnace installation brockton, heat pump rebates plymouth',
+        slug: 'plymouth-county'
     },
     'worcester-county': {
         county: 'Worcester County, MA',
         cities: ['Worcester', 'Fitchburg', 'Leominster', 'Marlborough', 'Shrewsbury'],
         description: 'Expert HVAC installation and repair for Worcester County homes — from city neighborhoods to suburban properties.',
         image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070&auto=format&fit=crop',
+        seoTitle: 'HVAC Services in Worcester County, MA | A.W. Puma',
+        seoDescription: 'Expert HVAC installation and repair for Worcester County homes. Serving Worcester, Fitchburg, and Marlborough.',
+        seoKeywords: 'hvac worcester county, furnace repair worcester, ac installation fitchburg, heating contractor MA',
+        slug: 'worcester-county'
     },
     'bristol-county': {
         county: 'Bristol County, MA',
         cities: ['New Bedford', 'Fall River', 'Taunton', 'Attleboro', 'Brockton'],
         description: 'A.W. Puma serves Bristol County homeowners with licensed furnace, boiler, heat pump, and Mass Save® energy services.',
         image: 'https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=2074&auto=format&fit=crop',
+        seoTitle: 'HVAC Services in Bristol County, MA | A.W. Puma',
+        seoDescription: 'Licensed HVAC services in Bristol County. Serving New Bedford, Fall River, and Taunton. Mass Save® certified.',
+        seoKeywords: 'hvac bristol county, boiler repair fall river, ac installation new bedford, furnace service taunton',
+        slug: 'bristol-county'
     },
 };
 

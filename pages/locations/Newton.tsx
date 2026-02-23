@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import { ArrowRight, MapPin, Building, Waves, FileQuestion, Download, Plus, Minus } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
+import { SEO } from '../../components/SEO';
 
 export const NewtonLocation: React.FC = () => {
     const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
     return (
         <div className="bg-white">
-            {/* 1. HERO SECTION (SOP-02: Section 1) */}
+            <SEO
+                title="HVAC Services in Newton, MA | A.W. Puma | Licensed Experts"
+                description="Fast, reliable furnace, AC, and mini split service in Newton, MA. Mass Save® rebates up to $16,000. Same-day service available."
+                keywords="hvac newton ma, furnace repair newton, ac installation newton, mini split rebates newton"
+                canonical="/locations/newton"
+            />
+
+            {/* 1. HERO SECTION */}
             <section className="relative min-h-[70vh] flex flex-col justify-center items-center pt-32">
                 <div className="absolute inset-0 z-0">
                     <img
@@ -33,13 +41,13 @@ export const NewtonLocation: React.FC = () => {
                         From historic renovations in Newton Centre to modern additions in Waban. We know the code, the inspectors, and the soil.
                     </p>
 
-                    <Button size="lg" icon={<ArrowRight size={18} />}>
-                        Discuss Your Newton Project
+                    <Button size="lg" className="flex items-center gap-2">
+                        Discuss Your Newton Project <ArrowRight size={18} />
                     </Button>
                 </div>
             </section>
 
-            {/* 2. THE RELEVANCE LAYER (SOP-02: Section 2) */}
+            {/* 2. THE RELEVANCE LAYER */}
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
@@ -50,7 +58,6 @@ export const NewtonLocation: React.FC = () => {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {/* Vector 1: Soil */}
                         <div className="bg-gray-50 p-8 rounded-sm border-b-4 border-brand-navy">
                             <div className="bg-white w-12 h-12 rounded-full flex items-center justify-center mb-6 shadow-sm">
                                 <Building size={24} className="text-brand-navy" />
@@ -60,7 +67,6 @@ export const NewtonLocation: React.FC = () => {
                                 Many parts of Newton (especially Chestnut Hill) sit on shallow bedrock. We perform test pits <strong>before</strong> quoting a foundation to avoid expensive blasting surprises later.
                             </p>
                         </div>
-                        {/* Vector 2: Water */}
                         <div className="bg-gray-50 p-8 rounded-sm border-b-4 border-brand-gold">
                             <div className="bg-white w-12 h-12 rounded-full flex items-center justify-center mb-6 shadow-sm">
                                 <Waves size={24} className="text-brand-navy" />
@@ -70,7 +76,6 @@ export const NewtonLocation: React.FC = () => {
                                 Newton Engineering Department is strict about runoff. Any addition over 500 sq. ft. often requires engineered infiltration systems (Cultec chambers) to keep water on-site.
                             </p>
                         </div>
-                        {/* Vector 3: Code */}
                         <div className="bg-gray-50 p-8 rounded-sm border-b-4 border-brand-navy">
                             <div className="bg-white w-12 h-12 rounded-full flex items-center justify-center mb-6 shadow-sm">
                                 <FileQuestion size={24} className="text-brand-navy" />
@@ -84,7 +89,7 @@ export const NewtonLocation: React.FC = () => {
                 </div>
             </section>
 
-            {/* 3. THE PROOF LAYER (SOP-02: Section 3) */}
+            {/* 3. THE PROOF LAYER */}
             <section className="py-24 bg-gray-50 leading-relaxed">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                     <div>
@@ -109,7 +114,6 @@ export const NewtonLocation: React.FC = () => {
                         <Button variant="outline">View Newton Portfolio</Button>
                     </div>
                     <div className="h-[400px] bg-gray-300 rounded-sm overflow-hidden relative shadow-lg">
-                        {/* Placeholder for Google Map Embed */}
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47156.46781427506!2d-71.24430485642646!3d42.33704153359654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e382f5b3a3c1e7%3A0x6e9389280d8f564!2sNewton%2C%20MA!5e0!3m2!1sen!2sus!4v1707930000000!5m2!1sen!2sus"
                             width="100%"
@@ -124,7 +128,7 @@ export const NewtonLocation: React.FC = () => {
                 </div>
             </section>
 
-            {/* 4. THE DATA LAYER (FAQ) (SOP-02: Section 4) */}
+            {/* 4. THE DATA LAYER (FAQ) */}
             <section className="py-24 bg-white">
                 <div className="max-w-3xl mx-auto px-4">
                     <h2 className="text-3xl font-serif font-bold text-brand-navy mb-12 text-center">Newton Permitting FAQ</h2>
@@ -153,7 +157,7 @@ export const NewtonLocation: React.FC = () => {
                 </div>
             </section>
 
-            {/* 5. THE FUNNEL (SOP-02: Section 5) */}
+            {/* 5. THE FUNNEL */}
             <section className="py-20 bg-brand-light">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <div className="bg-white p-12 rounded-sm shadow-xl border border-gray-100">
@@ -170,7 +174,6 @@ export const NewtonLocation: React.FC = () => {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 };

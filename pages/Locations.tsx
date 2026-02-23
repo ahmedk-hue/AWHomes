@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, ArrowRight } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { MapPin, Phone, ArrowRight, ExternalLink } from 'lucide-react';
 
 export const Locations: React.FC = () => {
     const locations = [
@@ -10,7 +11,6 @@ export const Locations: React.FC = () => {
             image: 'https://images.unsplash.com/photo-1549643276-fbc2cbd0289c?q=80&w=2070&auto=format&fit=crop',
             link: '/locations/newton'
         },
-        // Placeholder for future locations
         {
             name: 'Brookline, MA',
             description: 'Coming Soon: Expert home services for Brookline\'s historic estates and intricate urban properties.',
@@ -26,7 +26,13 @@ export const Locations: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white pt-32">
+        <div className="pt-20">
+            <SEO
+                title="Service Areas | Boston, Metro West & 7 Counties | A.W. Puma"
+                description="A.W. Puma serves 7 counties across Massachusetts. Find your city and book your premium home service today."
+                keywords="hvac service areas MA, home remodeling locations, boston hvac, metro west construction"
+                canonical="/locations"
+            />
             <section className="bg-brand-navy text-white py-20 text-center">
                 <div className="max-w-7xl mx-auto px-4">
                     <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Areas We Serve</h1>
