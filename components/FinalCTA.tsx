@@ -22,7 +22,7 @@ export const FinalCTA: React.FC = () => {
             Book Online Now
           </Button>
           <a href="tel:+16176183366" className="w-full sm:w-auto">
-            <Button variant="outline" size="lg" className="w-full text-lg h-16 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white">
+            <Button variant="outline" size="lg" className="w-full text-lg h-16 border-brand-gold text-brand-gold !hover:bg-brand-gold !hover:text-white">
               Call (617) 618-3366
             </Button>
           </a>
