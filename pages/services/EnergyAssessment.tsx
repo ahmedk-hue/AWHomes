@@ -1,274 +1,223 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, AlertTriangle, ShieldCheck, Thermometer, FileText, Star, Plus, Minus, Plug, Leaf } from 'lucide-react';
+import React from 'react';
+import { Leaf, DollarSign, CheckCircle, Star, Phone, ArrowRight, Shield, Award, AlertTriangle, ExternalLink } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
+import { Link } from 'react-router-dom';
 
 export const EnergyAssessment: React.FC = () => {
-    const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-
     return (
         <div className="bg-white">
-            {/* 1. THE PROMISE (HERO) */}
-            <section className="relative min-h-[80vh] flex flex-col justify-center items-center pt-32">
-                <div className="absolute inset-0 z-0">
+
+            {/* 1. HERO */}
+            <section className="relative min-h-[92vh] flex items-center justify-center bg-brand-navy text-white overflow-hidden pt-20">
+                <div className="absolute inset-0 opacity-20">
                     <img
-                        src="https://images.unsplash.com/photo-1592833159057-65a284572b25?q=80&w=2070&auto=format&fit=crop"
-                        alt="Home Energy Efficiency"
+                        src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2070&auto=format&fit=crop"
+                        alt="Energy assessment Massachusetts"
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-brand-navy/85 mix-blend-multiply" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-90" />
                 </div>
-
-                <div className="relative z-10 max-w-7xl mx-auto px-4 w-full text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold/20 border border-brand-gold/50 backdrop-blur-md mb-8">
-                        <Leaf size={16} className="text-brand-gold" />
-                        <span className="text-sm font-bold text-brand-gold uppercase tracking-widest">Mass Save® Certified Partner</span>
-                    </div>
-
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/60 to-brand-navy/95" />
+                <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+                    <span className="inline-block text-sm font-bold text-brand-gold uppercase tracking-widest mb-4 border border-brand-gold/40 px-4 py-1 rounded-full">Mass Save® Certified Partner</span>
                     <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
-                        Stop Heating the <br />
-                        <span className="text-brand-gold">Outdoors.</span>
+                        Mass Save® Energy<br />
+                        <span className="text-brand-gold">Assessment, Boston MA</span>
                     </h1>
-
                     <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-                        Comprehensive home energy assessments that unlock up to $10,000 in rebates and significantly lower your monthly utility bills.
+                        A free home energy assessment through the{' '}
+                        <a href="https://www.masssave.com/" target="_blank" rel="noopener noreferrer" className="underline text-brand-gold hover:opacity-80">
+                            Mass Save® program
+                        </a>{' '}
+                        can unlock thousands in rebates on insulation, heat pumps, and equipment upgrades. A.W. Puma is your certified local partner.
                     </p>
-
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <Button size="lg" icon={<ArrowRight size={18} />}>
-                            Schedule Free Audit
-                        </Button>
-                        <Button variant="outline" size="lg">
-                            Rebate Calculator
-                        </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="tel:+16176183366">
+                            <Button size="lg" variant="primary" className="flex items-center gap-2">
+                                <Phone size={18} /> Call (617) 618-3366
+                            </Button>
+                        </a>
+                        <Link to="/contact">
+                            <Button size="lg" variant="outline" className="flex items-center gap-2 border-white text-white hover:bg-white hover:text-brand-navy">
+                                Schedule My Assessment <ArrowRight size={18} />
+                            </Button>
+                        </Link>
+                    </div>
+                    <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-gray-300">
+                        <span className="flex items-center gap-2"><CheckCircle size={16} className="text-brand-gold" /> Assessment Is Free</span>
+                        <span className="flex items-center gap-2"><CheckCircle size={16} className="text-brand-gold" /> Up to $16,000 in Rebates</span>
+                        <span className="flex items-center gap-2"><CheckCircle size={16} className="text-brand-gold" /> We Handle the Paperwork</span>
                     </div>
                 </div>
             </section>
 
-            {/* 2. THE EMPATHY LAYER (PAS) */}
-            <section className="py-24 bg-gray-50">
-                <div className="max-w-4xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-6">Where Is Your Money Going?</h2>
-                        <p className="text-lg text-brand-gray leading-relaxed">
-                            If your home was built before 2000, you are likely losing 30% of your heat through the attic and walls. It's like burning cash.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                        <div className="bg-white p-8 rounded-sm shadow-sm border-l-4 border-red-500">
-                            <div className="flex items-center gap-3 mb-4">
-                                <AlertTriangle className="text-red-500" size={24} />
-                                <h3 className="text-xl font-bold text-brand-navy">The Ice Dam Danger</h3>
-                            </div>
-                            <p className="text-brand-gray">
-                                Heat escaping through your roof melts snow, which refreezes at the gutters. This causes massive water damage to your walls and ceilings.
-                            </p>
-                        </div>
-                        <div className="bg-white p-8 rounded-sm shadow-sm border-l-4 border-red-500">
-                            <div className="flex items-center gap-3 mb-4">
-                                <AlertTriangle className="text-red-500" size={24} />
-                                <h3 className="text-xl font-bold text-brand-navy">Drafty Rooms</h3>
-                            </div>
-                            <p className="text-brand-gray">
-                                No matter how high you crank the thermostat, that one room is always freezing. This is an insulation failure, not a furnace failure.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="bg-brand-navy text-white p-8 rounded-sm text-center">
-                        <h3 className="text-2xl font-serif font-bold mb-4">Data-Driven Solutions</h3>
-                        <p className="text-gray-300 text-lg">
-                            We use <strong>Thermal Imaging</strong> and Blower Door tests to see exactly where the air is leaking. We rely on physics, not guesses.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* 3. THE COMPETENCE LAYER (3 PILLARS) */}
+            {/* 2. WHAT IS MASS SAVE */}
             <section className="py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <span className="text-brand-gold font-bold uppercase tracking-widest text-sm mb-2 block">Efficiency Science</span>
-                        <h2 className="text-4xl font-serif font-bold text-brand-navy">Total Home Envelope</h2>
+                <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-6">What Is Mass Save®?</h2>
+                        <p className="text-brand-gray text-lg leading-relaxed mb-6">
+                            <a href="https://www.masssave.com/" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline font-semibold">Mass Save®</a> is a statewide energy efficiency program offered through Massachusetts gas and electric utilities. It provides free home energy assessments, rebates, and 0% financing for energy-efficiency improvements — including insulation, air sealing, heat pumps, smart thermostats, and more.
+                        </p>
+                        <p className="text-brand-gray text-lg leading-relaxed mb-6">
+                            As a <strong>Mass Save® certified contractor</strong>, A.W. Puma can schedule your free assessment, identify your eligible upgrades, install the qualifying equipment, and file your rebate paperwork — all in one seamless process.
+                        </p>
+                        <a href="https://www.masssave.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-brand-gold font-semibold hover:underline">
+                            Learn more at masssave.com <ExternalLink size={16} />
+                        </a>
                     </div>
-
-                    <div className="grid md:grid-cols-3 gap-12">
-                        {/* Pillar 1: Technical */}
-                        <div className="space-y-6">
-                            <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center">
-                                <Thermometer className="text-brand-navy" size={32} />
-                            </div>
-                            <h3 className="text-2xl font-bold text-brand-navy">Diagnostic Tech</h3>
-                            <ul className="space-y-3">
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>Blower Door air leakage testing</span>
-                                </li>
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>Infrared thermal cameras</span>
-                                </li>
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>Combustion safety testing</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Pillar 2: Financial */}
-                        <div className="space-y-6">
-                            <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center">
-                                <Plug className="text-brand-navy" size={32} />
-                            </div>
-                            <h3 className="text-2xl font-bold text-brand-navy">Rebate Access</h3>
-                            <ul className="space-y-3">
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>75-100% off insulation work</span>
-                                </li>
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>No-cost air sealing</span>
-                                </li>
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>0% HEAT Loan application</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Pillar 3: Regulatory */}
-                        <div className="space-y-6">
-                            <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center">
-                                <ShieldCheck className="text-brand-navy" size={32} />
-                            </div>
-                            <h3 className="text-2xl font-bold text-brand-navy">Certified Pros</h3>
-                            <ul className="space-y-3">
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>BPI Certified Building Analysts</span>
-                                </li>
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>Lead-safe certified firms</span>
-                                </li>
-                                <li className="flex gap-3 text-brand-gray">
-                                    <CheckCircle2 size={20} className="text-brand-gold shrink-0" />
-                                    <span>OSHA 10 safety trained</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. THE EVIDENCE LAYER (SOCIAL PROOF) */}
-            <section className="py-24 bg-brand-navy text-white">
-                <div className="max-w-7xl mx-auto px-4">
-                    <h2 className="text-4xl font-serif font-bold mb-12 text-center text-white">Real Savings, Real Comfort</h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-white/10 p-8 rounded-sm backdrop-blur-sm">
-                            <div className="flex gap-1 mb-4">
-                                {[1, 2, 3, 4, 5].map(i => <Star key={i} className="fill-brand-gold text-brand-gold" size={16} />)}
-                            </div>
-                            <p className="text-gray-200 italic mb-6">"The audit was free, and Mass Save paid for 75% of our attic insulation. The difference in comfort was immediate. The house stays warm all night now."</p>
-                            <div className="font-bold">Karen D.</div>
-                            <div className="text-sm text-gray-400">Somerville, MA • Weatherization</div>
-                        </div>
-                        <div className="bg-white/10 p-8 rounded-sm backdrop-blur-sm">
-                            <div className="flex gap-1 mb-4">
-                                {[1, 2, 3, 4, 5].map(i => <Star key={i} className="fill-brand-gold text-brand-gold" size={16} />)}
-                            </div>
-                            <p className="text-gray-200 italic mb-6">"Our ice dams were awful every winter. A.W. Puma air sealed our attic and the problem is completely gone. Best investment we've made."</p>
-                            <div className="font-bold">Tom & Lisa H.</div>
-                            <div className="text-sm text-gray-400">Natick, MA • Air Sealing</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 5. THE SYSTEM LAYER (PROCESS) */}
-            <section className="py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-serif font-bold text-brand-navy mb-4">The Assessment Loop</h2>
-                        <p className="text-brand-gray">From audit to installation.</p>
-                    </div>
-
-                    <div className="border-l-2 border-brand-light pl-8 ml-4 md:ml-auto md:w-2/3 space-y-12 relative">
-                        {/* Step 1 */}
-                        <div className="relative">
-                            <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-brand-gold border-4 border-white shadow-sm"></div>
-                            <h3 className="text-xl font-bold text-brand-navy mb-2">1. The Audit (1-2 Hours)</h3>
-                            <p className="text-brand-gray">Our analyst inspects your insulation, heating system, and windows. We perform safety tests on your boiler.</p>
-                        </div>
-                        {/* Step 2 */}
-                        <div className="relative">
-                            <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-brand-navy border-4 border-white shadow-sm"></div>
-                            <h3 className="text-xl font-bold text-brand-navy mb-2">2. The Report</h3>
-                            <p className="text-brand-gray">You receive a breakdown of prioritized upgrades and the exact rebate amounts available to you.</p>
-                        </div>
-                        {/* Step 3 */}
-                        <div className="relative">
-                            <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-brand-navy border-4 border-white shadow-sm"></div>
-                            <h3 className="text-xl font-bold text-brand-navy mb-2">3. The Work</h3>
-                            <p className="text-brand-gray">Our insulation crew arrives. We air seal gaps and blow in cellulose insulation. Usually done in 1 day.</p>
-                        </div>
-                        {/* Step 4 */}
-                        <div className="relative">
-                            <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-brand-navy border-4 border-white shadow-sm"></div>
-                            <h3 className="text-xl font-bold text-brand-navy mb-2">4. Final Test</h3>
-                            <p className="text-brand-gray">We run the Blower Door test again to verify the reduction in air leakage. You see the numbers.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 6. THE DATA LAYER (FAQ) */}
-            <section className="py-24 bg-gray-50">
-                <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl font-serif font-bold text-brand-navy mb-12 text-center">Efficiency FAQ</h2>
-                    <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
                         {[
-                            { q: "Is the assessment really free?", a: "Yes. For eligible National Grid and Eversource customers, the assessment is performed at no cost to you." },
-                            { q: "How much is the insulation rebate?", a: "Currently, the program covers 75% to 100% of the cost of approved insulation improvements, depending on your income level and heating fuel." },
-                            { q: "What is air sealing?", a: "Air sealing involves finding and blocking gaps in your home's envelope (around pipes, chimneys, attics) to stop heat loss. It is often covered 100% by the program." },
-                            { q: "Do I need to clean my attic first?", a: "It helps to have clear access, but our team can help move light storage items. We will let you know during scheduling if any major clearing is needed." }
-                        ].map((faq, index) => (
-                            <div key={index} className="bg-white rounded-sm border border-gray-200">
-                                <button
-                                    className="w-full flex items-center justify-between p-6 text-left font-bold text-brand-navy focus:outline-none"
-                                    onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                                >
-                                    {faq.q}
-                                    {openFaqIndex === index ? <Minus size={20} className="text-brand-gold" /> : <Plus size={20} className="text-gray-400" />}
-                                </button>
-                                {openFaqIndex === index && (
-                                    <div className="p-6 pt-0 text-brand-gray leading-relaxed border-t border-gray-100">
-                                        {faq.a}
-                                    </div>
-                                )}
+                            { label: 'Heat Pump Systems', amount: 'Up to $16,000' },
+                            { label: 'Insulation & Air Sealing', amount: 'Up to $2,000' },
+                            { label: 'Heat Pump Water Heaters', amount: 'Up to $750' },
+                            { label: 'Smart Thermostats', amount: 'Up to $100' },
+                        ].map((item) => (
+                            <div key={item.label} className="bg-brand-light border border-gray-100 rounded-sm p-6 text-center">
+                                <div className="text-2xl font-bold text-brand-gold mb-2">{item.amount}</div>
+                                <div className="text-sm font-bold text-brand-navy">{item.label}</div>
+                                <div className="text-xs text-brand-gray mt-1">Mass Save® Rebate</div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* 7. SOFT CONVERSION (CTA) */}
-            <section className="py-20 bg-brand-light">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-serif font-bold text-brand-navy mb-6">Stop Wasting Energy</h2>
-                    <p className="text-brand-gray mb-8">Download our "Winter Prep Checklist" to see top 10 draft zones in Boston homes.</p>
-
-                    <div className="bg-white p-8 rounded-sm shadow-md max-w-lg mx-auto">
-                        <input type="email" placeholder="Enter your email address" className="w-full px-4 py-3 border border-gray-300 rounded-sm mb-4 outline-none focus:border-brand-gold" />
-                        <Button className="w-full justify-center">Get Key Insights</Button>
-                        <p className="text-xs text-gray-400 mt-4">We respect your privacy. Unsubscribe anytime.</p>
+            {/* 3. EMPATHY LAYER */}
+            <section className="py-24 bg-brand-light">
+                <div className="max-w-6xl mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-4">Most Massachusetts Homeowners Leave Thousands on the Table</h2>
+                        <p className="text-brand-gray max-w-2xl mx-auto text-lg">The Mass Save® program has been running for decades — but awareness remains low and the application process feels complicated.</p>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        {[
+                            { icon: AlertTriangle, title: 'Not Knowing the Assessment Is Free', text: 'The home energy assessment itself costs nothing. Many homeowners assume there\'s a fee and never call.' },
+                            { icon: AlertTriangle, title: 'Missing the Equipment Rebate Windows', text: 'Rebate amounts change annually. If you don\'t act this year, the incentive may be lower next year.' },
+                            { icon: AlertTriangle, title: 'Confusing Paperwork & Utility Coordination', text: 'Getting a rebate requires coordinating with your utility, filing forms, and meeting spec requirements.' },
+                            { icon: AlertTriangle, title: 'Hiring Non-Certified Contractors', text: 'Only certified Mass Save contractors can unlock rebates. An unlicensed installer disqualifies you.' },
+                        ].map((item) => (
+                            <div key={item.title} className="flex gap-4 p-5 rounded-sm border border-red-100 bg-white">
+                                <item.icon className="text-red-500 shrink-0 mt-1" size={20} />
+                                <div>
+                                    <div className="font-bold text-brand-navy mb-1">{item.title}</div>
+                                    <div className="text-brand-gray text-sm">{item.text}</div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
+            {/* 4. COMPETENCE LAYER */}
+            <section className="py-24 bg-white">
+                <div className="max-w-6xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-4">Why A.W. Puma as Your Mass Save® Partner</h2>
+                        <p className="text-brand-gray max-w-2xl mx-auto">We're not just certified — we specialize in maximizing rebate outcomes for Greater Boston homeowners.</p>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {[
+                            { icon: Award, title: 'Certified Mass Save® Installer', text: 'Our certification means you qualify for every available rebate when you use A.W. Puma. Non-certified contractors cannot unlock these incentives, regardless of the equipment installed.' },
+                            { icon: DollarSign, title: 'Full Rebate Strategy', text: 'We look at your home holistically — insulation, air sealing, HVAC, water heating — and build a rebate plan that maximizes your total incentive across all eligible improvements.' },
+                            { icon: Shield, title: 'End-to-End Paperwork', text: 'We gather utility data, complete the rebate applications, coordinate with Mass Save administrators, and track your payment. You don\'t lift a finger on paperwork.' },
+                        ].map((pillar) => (
+                            <div key={pillar.title} className="bg-brand-light p-8 rounded-sm shadow-sm border-t-4 border-brand-gold">
+                                <pillar.icon className="w-12 h-12 text-brand-navy mb-6" />
+                                <h3 className="text-xl font-bold text-brand-navy mb-3">{pillar.title}</h3>
+                                <p className="text-brand-gray">{pillar.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 5. SOCIAL PROOF */}
+            <section className="py-24 bg-brand-light">
+                <div className="max-w-6xl mx-auto px-4">
+                    <h2 className="text-2xl font-bold text-brand-navy text-center mb-12">What Our Mass Save® Customers Say</h2>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {[
+                            { name: 'Christine W.', location: 'Wellesley, MA', text: 'A.W. Puma walked me through the entire Mass Save assessment, identified $9,000 in rebates I didn\'t know existed, and handled every form. Got my check in 8 weeks.' },
+                            { name: 'David N.', location: 'Boston, MA', text: 'I called three contractors and A.W. Puma was the only one who actually knew the Mass Save program in detail. They got us the maximum rebate on our heat pump and insulation.' },
+                            { name: 'Susan P.', location: 'Newton, MA', text: 'The assessment was genuinely free and there was zero pressure. They showed us exactly where our home was losing heat and gave us a clear, prioritized plan to fix it.' },
+                        ].map((review) => (
+                            <div key={review.name} className="bg-white p-8 rounded-sm">
+                                <div className="flex text-brand-gold mb-4">{[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} fill="currentColor" />)}</div>
+                                <p className="text-brand-gray italic mb-6">"{review.text}"</p>
+                                <div className="font-bold text-brand-navy">{review.name}</div>
+                                <div className="text-sm text-brand-gray">{review.location}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 6. PROCESS */}
+            <section className="py-24 bg-brand-navy text-white">
+                <div className="max-w-5xl mx-auto px-4">
+                    <h2 className="text-3xl font-serif font-bold text-center mb-16">Your Mass Save® Assessment Process</h2>
+                    <div className="grid md:grid-cols-4 gap-8">
+                        {[
+                            { step: '01', title: 'Schedule Your Assessment', text: 'Contact A.W. Puma or visit masssave.com to request your free home energy assessment.' },
+                            { step: '02', title: 'Home Walkthrough', text: 'An energy specialist visits your home, assesses insulation, HVAC, windows, and identifies efficiency gaps.' },
+                            { step: '03', title: 'Rebate Plan', text: 'We develop a prioritized plan showing your qualifying upgrades and exact rebate amounts.' },
+                            { step: '04', title: 'Install & Get Paid', text: 'We install certified equipment and submit your rebate paperwork. Your check arrives in weeks.' },
+                        ].map((s) => (
+                            <div key={s.step} className="text-center">
+                                <div className="text-5xl font-bold text-brand-gold opacity-60 mb-2">{s.step}</div>
+                                <h3 className="font-bold text-white mb-2">{s.title}</h3>
+                                <p className="text-gray-300 text-sm">{s.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 7. FAQ */}
+            <section className="py-24 bg-white">
+                <div className="max-w-3xl mx-auto px-4">
+                    <h2 className="text-3xl font-serif font-bold text-brand-navy text-center mb-12">Mass Save® FAQs</h2>
+                    <div className="space-y-6">
+                        {[
+                            { q: 'Is the Mass Save® home energy assessment really free?', a: 'Yes. The home energy assessment is completely free to Massachusetts residents who qualify. There is no cost for the assessment itself. Rebates are then applied against the cost of qualifying improvements.' },
+                            { q: 'Who qualifies for Mass Save® in Massachusetts?', a: 'Most Massachusetts homeowners and renters qualify. Eligibility is based on your utility provider (National Grid, Eversource, Unitil, etc.). Visit masssave.com to confirm your utility participates.' },
+                            { q: 'How long does a home energy assessment take?', a: 'Most home energy assessments take 2–3 hours. The specialist will use blower door tests and other diagnostic tools to assess air leakage and thermal performance.' },
+                            { q: 'What rebates can I get from Mass Save®?', a: 'Rebates vary by improvement type: up to $16,000 for heat pump systems, up to $2,000 for insulation, up to $750 for heat pump water heaters, and more. Visit masssave.com for the current rebate schedule.' },
+                            { q: 'Why use A.W. Puma instead of going directly through Mass Save®?', a: 'We are a certified Mass Save partner — meaning our installations automatically qualify for rebates. We also handle all paperwork, track your rebate payment, and can coordinate multiple improvements in one visit to maximize your total incentive.' },
+                        ].map((faq) => (
+                            <div key={faq.q} className="border-b border-gray-200 pb-6">
+                                <h3 className="font-bold text-brand-navy mb-2">{faq.q}</h3>
+                                <p className="text-brand-gray">{faq.a}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 8. FINAL CTA */}
+            <section className="py-24 bg-brand-gold text-white text-center">
+                <div className="max-w-3xl mx-auto px-4">
+                    <h2 className="text-4xl font-serif font-bold mb-4">Your Free Assessment Is Waiting</h2>
+                    <p className="text-xl mb-4 opacity-90">Don't leave thousands in rebates unclaimed. Schedule your free Mass Save® assessment with A.W. Puma today.</p>
+                    <p className="mb-8 opacity-80 text-sm">
+                        You can also visit{' '}
+                        <a href="https://www.masssave.com/" target="_blank" rel="noopener noreferrer" className="underline font-semibold">masssave.com</a>
+                        {' '}to learn more about the program.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="tel:+16176183366">
+                            <Button size="lg" className="bg-white text-brand-gold hover:bg-gray-100 font-bold flex items-center gap-2">
+                                <Phone size={18} /> (617) 618-3366
+                            </Button>
+                        </a>
+                        <Link to="/contact">
+                            <Button size="lg" className="bg-brand-navy text-white hover:bg-opacity-90 flex items-center gap-2">
+                                Schedule Assessment <ArrowRight size={18} />
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };

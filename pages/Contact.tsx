@@ -21,14 +21,14 @@ export const Contact: React.FC = () => {
                                 <Phone className="text-brand-gold shrink-0" size={24} />
                                 <div>
                                     <div className="font-bold text-brand-navy">Phone</div>
-                                    <a href="tel:+16175550123" className="text-brand-gray hover:text-brand-gold transition-colors">(617) 555-0123</a>
+                                    <a href="tel:+16176183366" className="text-brand-gray hover:text-brand-gold transition-colors">(617) 618-3366</a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <Mail className="text-brand-gold shrink-0" size={24} />
                                 <div>
                                     <div className="font-bold text-brand-navy">Email</div>
-                                    <a href="mailto:hello@awpuma.com" className="text-brand-gray hover:text-brand-gold transition-colors">hello@awpuma.com</a>
+                                    <a href="mailto:info@awpumahome.com" className="text-brand-gray hover:text-brand-gold transition-colors">info@awpumahome.com</a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -36,8 +36,8 @@ export const Contact: React.FC = () => {
                                 <div>
                                     <div className="font-bold text-brand-navy">Office</div>
                                     <p className="text-brand-gray line-clamp-2">
-                                        123 Newbury Street, Suite 400<br />
-                                        Newton Centre, MA 02459
+                                        202 Washington St<br />
+                                        Brookline, MA 02445
                                     </p>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@ export const Contact: React.FC = () => {
 
                     <div className="h-64 bg-gray-200 rounded-sm overflow-hidden shadow-lg border border-gray-200">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94356.59363065666!2d-71.25883584179686!3d42.3370415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e382f5b3a3c1e7%3A0x6e9389280d8f564!2sNewton%2C%20MA!5e0!3m2!1sen!2sus!4v1707930000000!5m2!1sen!2sus"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.123!2d-71.1212!3d42.3318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a7cd0b7c1b7%3A0x1!2s202+Washington+St%2C+Brookline%2C+MA+02445!5e0!3m2!1sen!2sus!4v1707930000000!5m2!1sen!2sus"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
@@ -93,12 +93,13 @@ export const Contact: React.FC = () => {
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-brand-navy uppercase tracking-wider">Service Needed</label>
                             <select className="w-full px-4 py-3 border border-gray-300 rounded-sm outline-none focus:border-brand-gold bg-white">
-                                <option>Home Remodeling</option>
-                                <option>HVAC Install / Repair</option>
-                                <option>Plumbing Service</option>
-                                <option>Electrical Work</option>
-                                <option>Energy Assessment</option>
-                                <option>Property Maintenance</option>
+                                <option>Furnace Installation / Repair</option>
+                                <option>Mini Split Systems</option>
+                                <option>Heat Pump Installation</option>
+                                <option>Air Conditioner (AC)</option>
+                                <option>Boiler Installation / Repair</option>
+                                <option>Water Heater</option>
+                                <option>Mass Save® Energy Assessment</option>
                                 <option>Other</option>
                             </select>
                         </div>

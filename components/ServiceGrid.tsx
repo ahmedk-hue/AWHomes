@@ -1,51 +1,59 @@
 import React from 'react';
-import { Droplets, Zap, Wrench, Home, ThermometerSun, ArrowRight } from 'lucide-react';
+import { Flame, Wind, Thermometer, AirVent, Droplets, Zap, ArrowRight, Leaf } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 const services: ServiceItem[] = [
   {
-    id: 'remodel',
-    title: 'Home Remodeling',
-    description: 'Transform your living space with our turnkey design-build process. Kitchens, baths, and additions.',
-    icon: Home,
-    link: '/services/remodeling',
+    id: 'furnace',
+    title: 'Furnace',
+    description: 'Expert furnace installation, repair, and replacement across Greater Boston. Mass Save® certified.',
+    icon: Flame,
+    link: '/services/furnace',
   },
   {
-    id: 'hvac',
-    title: 'HVAC Solutions',
-    description: 'High-efficiency heating and cooling systems installed by certified technicians.',
-    icon: ThermometerSun,
-    link: '/services/hvac',
+    id: 'mini-splits',
+    title: 'Mini Splits',
+    description: 'Ductless mini split systems with up to $10,000 in Mass Save® rebates. Heating and cooling in one.',
+    icon: AirVent,
+    link: '/services/mini-splits',
   },
   {
-    id: 'plumbing',
-    title: 'Precision Plumbing',
-    description: 'From leak detection to complete repiping. Reliable solutions for your water systems.',
-    icon: Droplets,
-    link: '/services/plumbing',
+    id: 'heat-pump',
+    title: 'Heat Pump',
+    description: 'Cold-climate heat pumps for New England winters. Up to $16,000 in Mass Save® rebates.',
+    icon: Thermometer,
+    link: '/services/heat-pump',
   },
   {
-    id: 'electrical',
-    title: 'Electrical & Smart Home',
-    description: 'Panel upgrades, lighting design, and modern smart home integration.',
+    id: 'air-conditioner',
+    title: 'Air Conditioner',
+    description: 'Central and ductless AC installation and repair. Same-day service available. Manual J sizing.',
+    icon: Wind,
+    link: '/services/air-conditioner',
+  },
+  {
+    id: 'boiler',
+    title: 'Boiler',
+    description: 'Gas, oil, and electric boiler installation and replacement. Fully permitted and inspected.',
     icon: Zap,
-    link: '/services/electrical',
+    link: '/services/boiler',
   },
   {
-    id: 'energy',
-    title: 'Energy Assessment',
-    description: 'Mass Save® certified assessments to reduce your carbon footprint and bills.',
-    icon: Wrench,
-    link: '/services/energy',
+    id: 'water-heater',
+    title: 'Water Heater',
+    description: 'Tank and tankless water heater replacement. Same-day emergency service available.',
+    icon: Droplets,
+    link: '/services/water-heater',
   },
   {
-    id: 'maintenance',
-    title: 'Property Maintenance',
-    description: 'Scheduled upkeep to ensure your home systems run smoothly year-round.',
-    icon: Wrench, // Reusing wrench for now
-    link: '/services/maintenance',
+    id: 'energy-assessment',
+    title: 'Mass Save® Energy',
+    description: 'Free home energy assessments and rebate coordination. Up to $16,000 in available incentives.',
+    icon: Leaf,
+    link: '/services/energy-assessment',
   },
 ];
+
 
 export const ServiceGrid: React.FC = () => {
   return (

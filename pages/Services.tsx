@@ -6,12 +6,13 @@ export const Services: React.FC = () => {
         <div className="bg-white pt-24">
             <section className="bg-brand-navy text-white py-20 text-center">
                 <div className="max-w-7xl mx-auto px-4">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Our Premium Services</h1>
+                    <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Our HVAC Services</h1>
                     <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                        Comprehensive home improvement solutions delivered with engineering precision and white-glove care.
+                        Heating, cooling, and energy efficiency solutions for Greater Boston homeowners — delivered with precision and backed by Mass Save® certification.
                     </p>
                 </div>
             </section>
+
 
             <div className="py-12">
                 <ServiceGrid />

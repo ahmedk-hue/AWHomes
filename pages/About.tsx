@@ -15,9 +15,9 @@ export const About: React.FC = () => {
                     />
                 </div>
                 <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-                    <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Building Trust, Not Just Houses.</h1>
+                    <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">Always There. Always Fair.</h1>
                     <p className="text-xl text-brand-gold max-w-2xl mx-auto font-light">
-                        Since 2005, A.W. Puma has been the quiet force behind some of Greater Boston's most enduring homes.
+                        Since 2010, A.W. Puma has been Greater Boston's trusted name for heating, cooling, and home comfort.
                     </p>
                 </div>
             </section>
@@ -56,7 +56,7 @@ export const About: React.FC = () => {
                         </div>
 
                         <div className="pt-6 border-t border-gray-100">
-                            <div className="font-serif text-2xl text-brand-navy">Alberto Puma</div>
+                            <div className="font-serif text-2xl text-brand-navy">Albert Puma</div>
                             <div className="text-sm text-brand-gray uppercase tracking-widest font-bold">Founder & Principal</div>
                         </div>
                     </div>
@@ -115,14 +115,14 @@ export const About: React.FC = () => {
                             <div className="absolute -left-[43px] top-1 w-6 h-6 rounded-full bg-brand-gold border-4 border-white shadow-sm"></div>
                             <span className="text-sm font-bold text-brand-gold uppercase tracking-widest">2005</span>
                             <h3 className="text-2xl font-bold text-brand-navy mb-2">Foundation</h3>
-                            <p className="text-brand-gray">Alberto Puma starts the company with a single truck, focusing on high-end kitchen remodels in Newton.</p>
+                            <p className="text-brand-gray">Albert Puma starts the company with a single van, focusing on furnace and boiler service across the greater Newton area.</p>
                         </div>
                         {/* 2012 */}
                         <div className="relative">
                             <div className="absolute -left-[43px] top-1 w-6 h-6 rounded-full bg-brand-navy border-4 border-white shadow-sm"></div>
                             <span className="text-sm font-bold text-brand-gold uppercase tracking-widest">2012</span>
-                            <h3 className="text-2xl font-bold text-brand-navy mb-2">Expansion to Commercial</h3>
-                            <p className="text-brand-gray">The company completes its first major restaurant build-out in Boston's North End, proving our ability to hit strict deadlines.</p>
+                            <h3 className="text-2xl font-bold text-brand-navy mb-2">Mass Save® Partnership</h3>
+                            <p className="text-brand-gray">A.W. Puma becomes a certified Mass Save partner, unlocking rebate access and energy audit capabilities for customers.</p>
                         </div>
                         {/* 2018 */}
                         <div className="relative">
@@ -135,8 +135,8 @@ export const About: React.FC = () => {
                         <div className="relative">
                             <div className="absolute -left-[43px] top-1 w-6 h-6 rounded-full bg-brand-navy border-4 border-white shadow-sm"></div>
                             <span className="text-sm font-bold text-brand-gold uppercase tracking-widest">Today</span>
-                            <h3 className="text-2xl font-bold text-brand-navy mb-2">Full-Service Design Build</h3>
-                            <p className="text-brand-gray">Now a team of 15+, managing multi-million dollar custom builds and comprehensive property maintenance plans across Greater Boston.</p>
+                            <h3 className="text-2xl font-bold text-brand-navy mb-2">Full-Service HVAC & Home Comfort</h3>
+                            <p className="text-brand-gray">Now a team of 15+, serving 7 counties across Massachusetts with installations, service agreements, and Mass Save® energy programs.</p>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ export const About: React.FC = () => {
                             <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
                                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="Alberto Puma" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                             </div>
-                            <h3 className="text-lg font-bold text-brand-navy">Alberto Puma</h3>
+                            <h3 className="text-lg font-bold text-brand-navy">Albert Puma</h3>
                             <div className="text-sm text-brand-gold uppercase tracking-widest">Principal</div>
                         </div>
                         {/* Team Member 2 */}
