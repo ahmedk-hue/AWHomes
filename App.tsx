@@ -18,6 +18,7 @@ import { AirConditioner } from './pages/services/AirConditioner';
 import { Boiler } from './pages/services/Boiler';
 import { WaterHeater } from './pages/services/WaterHeater';
 import { EnergyAssessment } from './pages/services/EnergyAssessment';
+import { HomeRemodeling } from './pages/services/HomeRemodeling';
 
 // Location Pages - Counties
 import {
@@ -57,6 +58,7 @@ const App: React.FC = () => {
             <Route path="/services/boiler" element={<Boiler />} />
             <Route path="/services/water-heater" element={<WaterHeater />} />
             <Route path="/services/energy-assessment" element={<EnergyAssessment />} />
+            <Route path="/services/custom-remodeling" element={<HomeRemodeling />} />
 
             {/* County Location Pages */}
             <Route path="/locations/middlesex-county" element={<MiddlesexCounty />} />

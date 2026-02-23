@@ -28,6 +28,7 @@ export const Navbar: React.FC = () => {
         { name: 'Boiler', href: '/services/boiler' },
         { name: 'Water Heater', href: '/services/water-heater' },
         { name: 'Mass Save® Energy', href: '/services/energy-assessment' },
+        { name: 'Custom Remodeling', href: '/services/custom-remodeling' },
       ]
     },
     {
@@ -108,11 +109,11 @@ export const Navbar: React.FC = () => {
 
           {/* CTA & Phone */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="tel:6175550123" className="flex items-center gap-2 text-brand-navy font-bold hover:text-brand-gold transition-colors">
+            <a href="tel:6176183366" className="flex items-center gap-2 text-brand-navy font-bold hover:text-brand-gold transition-colors">
               <div className="w-8 h-8 rounded-full bg-brand-light flex items-center justify-center border border-gray-200">
                 <IconPhone size={14} />
               </div>
-              <span>(617) 555-0123</span>
+              <span>(617) 618-3366</span>
             </a>
             <Link to="/contact">
               <Button size="sm" variant="primary">
@@ -173,9 +174,9 @@ export const Navbar: React.FC = () => {
               )}
             </div>
           ))}
-          <a href="tel:6175550123" className="flex items-center gap-2 font-bold text-brand-navy py-2 pt-4">
+          <a href="tel:6176183366" className="flex items-center gap-2 font-bold text-brand-navy py-2 pt-4">
             <IconPhone size={18} className="text-brand-gold" />
-            (617) 555-0123
+            (617) 618-3366
           </a>
           <Button className="w-full" variant="primary">
             Book Consultation

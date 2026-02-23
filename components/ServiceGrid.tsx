@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Wind, Thermometer, AirVent, Droplets, Zap, ArrowRight, Leaf } from 'lucide-react';
+import { Flame, Wind, Thermometer, AirVent, Droplets, Zap, ArrowRight, Leaf, Home } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 const services: ServiceItem[] = [
@@ -51,6 +51,13 @@ const services: ServiceItem[] = [
     description: 'Free home energy assessments and rebate coordination. Up to $16,000 in available incentives.',
     icon: Leaf,
     link: '/services/energy-assessment',
+  },
+  {
+    id: 'custom-remodeling',
+    title: 'Custom Remodeling',
+    description: 'Expert home renovations, custom carpentry, and full-scale remodeling. High-performance craftsmanship.',
+    icon: Home,
+    link: '/services/custom-remodeling',
   },
 ];
 
