@@ -206,7 +206,7 @@ export const EnergyAssessment: React.FC = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="tel:+16176183366">
-                            <Button size="lg" className="bg-white text-brand-gold hover:bg-gray-100 font-bold flex items-center gap-2">
+                            <Button size="lg" className="bg-white !text-brand-gold hover:bg-gray-100 font-bold flex items-center gap-2">
                                 <Phone size={18} /> (617) 618-3366
                             </Button>
                         </a>
